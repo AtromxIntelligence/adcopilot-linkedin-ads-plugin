@@ -1,0 +1,35 @@
+{
+  "name": "adcopilot-linkedin-ads",
+  "version": "0.1.0",
+  "description": "LinkedIn Ads help in your AI client, through AdCopilot. Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and conversions in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. Direct access to your LinkedIn ad account comes when LinkedIn approves AdCopilot's API access; there is no date yet. Every change is proposed first and made only on your yes. Made by Atromx Intelligence, not by LinkedIn.",
+  "author": {
+    "name": "Atromx Intelligence",
+    "url": "https://adcopilot.cloud"
+  },
+  "homepage": "https://adcopilot.cloud",
+  "privacyPolicyUrl": "https://adcopilot.cloud/privacy",
+  "documentationUrl": "https://adcopilot.cloud/docs/",
+  "termsOfServiceUrl": "https://adcopilot.cloud/terms",
+  "supportUrl": "https://github.com/AtromxIntelligence/adcopilot-linkedin-ads-plugin/issues",
+  "repository": "https://github.com/AtromxIntelligence/adcopilot-linkedin-ads-plugin",
+  "license": "MIT",
+  "keywords": [
+    "linkedin-ads",
+    "linkedin-advertising",
+    "linkedin-insight-tag",
+    "b2b-advertising",
+    "sponsored-content",
+    "paid-social",
+    "conversions",
+    "utm",
+    "google-analytics",
+    "ga4",
+    "google-tag-manager",
+    "ad-copy",
+    "campaign-planning",
+    "budget-pacing",
+    "adcopilot"
+  ],
+  "displayName": "AdCopilot for LinkedIn Ads",
+  "icon": "./.claude-plugin/icon.png"
+}
