@@ -1,5 +1,6 @@
-# Tools the AdCopilot connector serves at https://mcp.adcopilot.cloud/mcp (tools revision 19ca95df, AdCopilot v2.44.1),
-# checked 23 October 2026. One name per line; lines starting with # are comments.
+# Tools the AdCopilot connector serves at https://mcp.adcopilot.cloud/mcp (tools revision 19ca95df),
+# checked 23 October 2026 against AdCopilot v2.44.0 and v2.44.1, which serve the same tools.
+# One name per line; lines starting with # are comments.
 # tests/test_components.py holds every tool a skill names to this list.
 
 # Google Ads

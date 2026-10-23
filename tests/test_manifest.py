@@ -4,8 +4,9 @@
 What they hold is what the plugin directory's pre-submission checklist asks for
 (a lowercase hyphenated name, a display name, a description, a semantic version,
 the author, the homepage, a licence, keywords, an icon) and what this plugin has
-decided: its name and listing name never change, and every AdCopilot plugin
-carries the same connector file, byte for byte, so Claude connects it once.
+decided: its name and listing name never change, and the connector file names
+one server, `adcopilot`, at the one address every AdCopilot plugin uses, so
+Claude, which matches a plugin's server by its address, connects it once.
 
 Run with `python3 -m unittest discover -s tests -v` from the repository root
 (stdlib only; reads no environment variable).
@@ -30,9 +31,10 @@ PLUGIN_KEYS = [
     "license", "keywords", "displayName", "icon",
 ]
 
-# The connector file every AdCopilot plugin carries, byte for byte: the same key
-# on every plugin, and the same spelling of the address (lowercase, no trailing
-# slash, no query string), so Claude sees one server and asks for one sign-in.
+# The connector file, held to one exact text: the server key `adcopilot` and the
+# address spelled one way (lowercase, no trailing slash, no query string), so
+# Claude sees the same server as every other AdCopilot plugin's and asks for one
+# sign-in.
 MCP_CANONICAL = {
     "mcpServers": {
         "adcopilot": {"type": "http", "url": "https://mcp.adcopilot.cloud/mcp"}

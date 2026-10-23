@@ -35,8 +35,8 @@ NAME = PLUGIN["name"]
 VERSION = PLUGIN["version"]
 SOURCE = "claude-plugin/%s/%s" % (NAME, VERSION)
 
-# Said once, in the first answer, in these words. The founder's decision: a
-# plugin for an ad platform says plainly what works today and what does not.
+# Said once, in the first answer, in these words: a plugin for an ad platform
+# says plainly what works today and what does not.
 TODAY_LATER = (
     "Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports "
     "LinkedIn traffic and key events in Google Analytics (GA4) by source, medium "
@@ -52,8 +52,9 @@ APPROVAL = (
     "is applied only after the customer's explicit yes in this conversation."
 )
 
-TRADEMARK = "Not affiliated with or endorsed by LinkedIn."
-TRADEMARK_OWNER = "trademarks of LinkedIn Corporation"
+TRADEMARK = "Not affiliated with or endorsed by LinkedIn or Google."
+TRADEMARK_OWNER = "LinkedIn is a trademark of LinkedIn Corporation"
+TRADEMARK_GOOGLE = "Google Analytics and Google Tag Manager are trademarks of Google LLC."
 PLANS_LINE = ("The plugin is free (MIT). The AdCopilot connector is a hosted service: "
               "Free plan available; paid plans on https://adcopilot.cloud/pricing")
 
@@ -274,6 +275,7 @@ class Readme(unittest.TestCase):
     def test_the_trademark_line_and_the_plans_line(self):
         self.assertIn(TRADEMARK, self.flat)
         self.assertIn(TRADEMARK_OWNER, self.flat)
+        self.assertIn(TRADEMARK_GOOGLE, self.flat)
         self.assertIn("Made by Atromx Intelligence (https://adcopilot.cloud).", self.flat)
         self.assertIn(PLANS_LINE, self.flat)
 

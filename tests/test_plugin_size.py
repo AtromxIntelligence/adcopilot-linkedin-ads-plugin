@@ -3,10 +3,9 @@ unnoticed.
 
 The directory's pre-submission checklist says "Keep every file that isn't an
 image or font under 256 KiB", and a version that has one is "Held for a
-reviewer"; it also says "Keep the plugin to 512 files or fewer". At 0.2.14 the
-structural tests were one file, `tests/test_structure.py`, of 273,469 bytes:
-11,325 bytes over, and nothing in this repository measured it. 0.2.15 split it
-by topic and added this test.
+reviewer"; it also says "Keep the plugin to 512 files or fewer". A test file
+is a file like any other there, so the tests are split by topic and this test
+measures every one of them.
 
 It measures every file in the plugin folder (tracked ones, plus untracked ones
 that are not ignored, so a new file fails here before it is committed) and

@@ -27,9 +27,9 @@ access is planned for when LinkedIn approves AdCopilot's API access, and there i
 no date.
 
 Made by Atromx Intelligence (https://adcopilot.cloud). Not affiliated with or
-endorsed by LinkedIn. LinkedIn, Insight Tag and Sponsored Content are trademarks
-of LinkedIn Corporation or their respective owners. This plugin is not related to
-other products named AdCopilot.
+endorsed by LinkedIn or Google. LinkedIn is a trademark of LinkedIn Corporation,
+and Google Analytics and Google Tag Manager are trademarks of Google LLC. This
+plugin is not related to other products named AdCopilot.
 
 The plugin is free (MIT). The AdCopilot connector is a hosted service: Free plan available; paid plans on https://adcopilot.cloud/pricing
 

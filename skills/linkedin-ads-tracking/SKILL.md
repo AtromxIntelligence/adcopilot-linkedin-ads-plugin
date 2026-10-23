@@ -210,5 +210,6 @@ LinkedIn's pages, for the customer who wants to check you, read on 23 October
 - https://www.linkedin.com/help/lms/answer/a488323
 - https://www.linkedin.com/help/lms/answer/a425606
 - https://www.linkedin.com/help/lms/answer/a417886
+- https://www.linkedin.com/help/lms/answer/a1437736
 - https://www.linkedin.com/help/lms/answer/a425696
 - https://www.linkedin.com/help/lms/answer/a489169
