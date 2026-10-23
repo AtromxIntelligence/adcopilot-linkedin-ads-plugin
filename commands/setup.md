@@ -40,9 +40,11 @@ they are before you say a step:
   someone who has this plugin installed in Claude: the plugin already brings the
   connector, so that adds nothing and fixes nothing.
 
-It is one connector and one sign-in, whichever AdCopilot plugins they add. If
-Claude Code asks them to sign in again after they remove an AdCopilot plugin,
-they run `/mcp` and sign in once.
+There is one connector and one AdCopilot account whichever AdCopilot plugins are
+added. In Claude Code, `/mcp` lists it once, under whichever AdCopilot plugin
+loaded first, and the sign-in belongs to that entry. If Claude asks for a
+sign-in again after an AdCopilot plugin was added or removed, run `/mcp` and
+sign in once.
 
 End with the one next step that fits what is connected: `/adcopilot-linkedin-ads:check`
 for the Insight Tag when Tag Manager is connected, or a question about how

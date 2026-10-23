@@ -298,10 +298,13 @@ class Readme(unittest.TestCase):
         self.assertIn("### Claude Code", self.text)
         self.assertIn("### Cowork", self.text)
 
-    def test_one_connector_one_sign_in_and_the_way_back_in(self):
-        self.assertIn("It is one connector and one sign-in, whichever AdCopilot plugins you add.", self.flat)
-        self.assertIn("run `/mcp` and sign in once", self.flat)
-        self.assertIn("under whichever AdCopilot plugin loaded first", self.flat)
+    def test_one_connector_one_account_and_the_way_back_in(self):
+        self.assertIn("There is one connector and one AdCopilot account, whichever "
+                      "AdCopilot plugins you add.", self.flat)
+        self.assertIn("under whichever AdCopilot plugin loaded first, and the sign-in "
+                      "belongs to that entry.", self.flat)
+        self.assertIn("If Claude asks you to sign in again after you add or remove an "
+                      "AdCopilot plugin, run `/mcp` and sign in once.", self.flat)
 
     def test_install_steps_name_this_plugin_and_this_repository(self):
         self.assertIn("/plugin marketplace add AtromxIntelligence/adcopilot-linkedin-ads-plugin", self.text)

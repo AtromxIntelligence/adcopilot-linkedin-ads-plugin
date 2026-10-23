@@ -65,14 +65,12 @@ to see what is connected.
 
 ## Already use another AdCopilot plugin?
 
-It is one connector and one sign-in, whichever AdCopilot plugins you add. Every
-AdCopilot plugin points at the same address, `https://mcp.adcopilot.cloud/mcp`.
-In Claude Code, `/mcp` shows the connector once, under whichever AdCopilot plugin
-loaded first. In Claude on the web, the desktop app and Cowork, Claude links a
-connector by its address, so these plugins use the one connector on your account;
-if this plugin's Connectors tab shows `adcopilot` as not connected, connect it
-there once. If Claude asks you to sign in again after you remove an AdCopilot
-plugin, run `/mcp` and sign in once.
+There is one connector and one AdCopilot account, whichever AdCopilot plugins you
+add. Every AdCopilot plugin points at the same address, so your AI client treats
+them as one connector. In Claude Code, `/mcp` shows the connector once, under
+whichever AdCopilot plugin loaded first, and the sign-in belongs to that entry.
+If Claude asks you to sign in again after you add or remove an AdCopilot plugin,
+run `/mcp` and sign in once.
 
 ## What you get
 
