@@ -6,14 +6,16 @@ credential, launches a package or downloads and runs anything, and nothing that
 the directory rejects is in the folder (a stray system file, a link to another
 file, a submodule, a bundled binary, an executable folder). It also holds the
 words this plugin has decided not to use: a price figure, a claim to be
-anyone's own product, and the word the directory's reviewers read as a claim of
-endorsement.
+anyone's own product, the word the directory's reviewers read as a claim of
+endorsement, a claim that the platform has approved AdCopilot or counts it as a
+partner, and an id that is never published here.
 
 The patterns below are built from pieces on purpose: written whole, this file
 would match itself. Run with `python3 -m unittest discover -s tests -v` from the
 repository root (stdlib only; reads no environment variable).
 """
 
+import hashlib
 import os
 import re
 import subprocess
@@ -25,6 +27,24 @@ ROOT = Path(__file__).resolve().parents[1]
 SKIP_DIRS = {".git", "__pycache__"}
 BINARY_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".woff", ".woff2", ".ttf", ".otf"}
 OWNER = "LinkedIn"
+
+# An id that is never published in this repository, held as a SHA-256 digest
+# so that this file does not publish it either: (length, digest). A run of
+# letters and digits anywhere in a text file that hashes to it fails. Only a
+# long id belongs here: a short one's digest is reversed by trying every value.
+NEVER_PUBLISHED = {
+    (14, "45eb83e8f21efde6cf0fae2ce207a8ffdbe592d9e3ec6e9ffc9405e006435cef"),
+}
+
+# A claim that the platform approved, certified or sponsored AdCopilot, or counts
+# it as a partner. The Insight Tag's "partner ID" is the platform's own name for
+# a tag setting, not a claim, so a partner followed by ID or IDs is left out.
+CLAIM_PATTERNS = [
+    r"(?i)\b(?:approv(?:ed|al)|certified|sponsored)\s+(?:by|from)\s+" + OWNER + r"\b",
+    r"(?i)\b" + OWNER + r"(?:['’]s)?[\s-]+(?:has\s+)?(?:approv(?:e[sd]?|al)|certifi(?:ed|cation))\b",
+    r"(?i)\b" + OWNER + r"(?:['’]s)?\s+(?:marketing\s+)?partn(?:ers?|ership)\b(?!\s+ids?\b)",
+    r"(?i)\bpartner(?:ed|s|ship)?\s+(?:of|with)\s+" + OWNER + r"\b",
+]
 
 
 def plugin_files():
@@ -180,6 +200,50 @@ class WordsThisPluginDoesNotUse(unittest.TestCase):
             for phrase in ("connects to your LinkedIn ad account", "reads your LinkedIn ad account",
                            "manages your LinkedIn", "LinkedIn Ads API access has been approved"):
                 self.assertNotIn(phrase, text, name)
+
+    def test_it_never_claims_the_platforms_approval_or_partnership(self):
+        # Every text file, the tests included: the patterns are built from
+        # pieces, so this file does not match itself.
+        for name in text_files():
+            text = re.sub(r"\s+", " ", read(name))
+            for pattern in CLAIM_PATTERNS:
+                hit = re.search(pattern, text)
+                self.assertIsNone(hit, "%s says %r" % (name, hit and hit.group(0)))
+
+    def test_the_approval_and_partnership_ban_catches_the_ways_it_is_said(self):
+        # The phrases are built at run time, so this file carries none of them.
+        caught = [
+            "approved by {o}", "approval from {o}", "certified by {o}", "sponsored by {o}",
+            "{o} approves", "{o}-approved", "{o} has approved", "pending {o} approval",
+            "with {o}'s approval", "with {o}’s approval", "{o}-certified", "{o} certification",
+            "{o} partner", "{o} Marketing Partners", "{o}'s partner program",
+            "{o}’s Marketing Partner", "{o} partnership", "a partner of {o}",
+            "partnered with {o}", "in partnership with {o}",
+        ]
+        passed = [
+            "the {o} partner ID", "two {o} partner IDs", "{o} Sponsored Content",
+            "Not affiliated with or endorsed by {o}",
+            "Direct access to your {o} ad account is being built; there is no date.",
+            "claims approval or partnership from {o}",
+        ]
+        def hits(phrase):
+            return [p for p in CLAIM_PATTERNS if re.search(p, phrase.format(o=OWNER))]
+        for phrase in caught:
+            self.assertNotEqual(hits(phrase), [], phrase)
+        for phrase in passed:
+            self.assertEqual(hits(phrase), [], phrase)
+
+    def test_it_never_carries_an_id_that_is_never_published_here(self):
+        lengths = {length for length, _ in NEVER_PUBLISHED}
+        for name in text_files():
+            for run in re.findall(r"[A-Za-z0-9]+", read(name)):
+                run = run.lower()
+                for length in lengths:
+                    for start in range(len(run) - length + 1):
+                        window = run[start:start + length]
+                        digest = hashlib.sha256(window.encode("ascii")).hexdigest()
+                        self.assertNotIn((length, digest), NEVER_PUBLISHED,
+                                         "%s carries an id that is never published here" % name)
 
 
 if __name__ == "__main__":

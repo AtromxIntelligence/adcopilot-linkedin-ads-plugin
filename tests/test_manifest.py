@@ -106,7 +106,8 @@ class PluginManifest(unittest.TestCase):
         self.assertIsInstance(description, str)
         self.assertLessEqual(len(description), 600)
         self.assertTrue(description.startswith("LinkedIn Ads"), description)
-        self.assertIn("there is no date yet", description)
+        self.assertIn("Direct access to your LinkedIn ad account is being built; there is no date.",
+                      description)
         self.assertIn("proposed first", description)
         self.assertTrue(description.endswith("Made by Atromx Intelligence, not by %s." % OWNER),
                         description)

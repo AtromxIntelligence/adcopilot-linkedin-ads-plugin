@@ -9,7 +9,7 @@
     {
       "name": "adcopilot-linkedin-ads",
       "source": "./",
-      "description": "LinkedIn Ads help through AdCopilot: Insight Tag checks in Tag Manager, LinkedIn traffic in Google Analytics, UTM hygiene, B2B campaign plans, Sponsored Content drafts and budget math. Reading your LinkedIn ad account is not available yet.",
+      "description": "LinkedIn Ads help through AdCopilot: Insight Tag checks in Tag Manager, LinkedIn traffic in Google Analytics, UTM hygiene, B2B campaign plans, Sponsored Content drafts and budget math. Direct access to your LinkedIn ad account is being built; there is no date.",
       "category": "Marketing"
     }
   ]

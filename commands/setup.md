@@ -6,10 +6,10 @@ description: Check the AdCopilot connector is connected and signed in, and say w
 In your first answer in this conversation, say this once, as written, before
 anything else:
 
-> Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It cannot read your LinkedIn ad account yet: direct access is planned for when LinkedIn approves AdCopilot's API access, and there is no date.
+> Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It cannot read your LinkedIn ad account yet. Direct access to your LinkedIn ad account is being built; there is no date.
 
 Then call `get_org_context` with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.0"`. Send `source` exactly as
+`source: "claude-plugin/adcopilot-linkedin-ads/0.1.1"`. Send `source` exactly as
 written. This plugin schedules nothing. In a run started by a scheduled task with
 nobody there to answer, send `source: "claude-scheduled"` instead and change
 nothing.

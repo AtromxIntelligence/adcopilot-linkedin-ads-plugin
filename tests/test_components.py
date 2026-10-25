@@ -35,6 +35,11 @@ NAME = PLUGIN["name"]
 VERSION = PLUGIN["version"]
 SOURCE = "claude-plugin/%s/%s" % (NAME, VERSION)
 
+# What comes later, in these words wherever it is said: the manifest, the
+# marketplace entry, the README, the first answer. It promises no approval, no
+# partnership and no date.
+LATER = "Direct access to your LinkedIn ad account is being built; there is no date."
+
 # Said once, in the first answer, in these words: a plugin for an ad platform
 # says plainly what works today and what does not.
 TODAY_LATER = (
@@ -42,8 +47,7 @@ TODAY_LATER = (
     "LinkedIn traffic and key events in Google Analytics (GA4) by source, medium "
     "and campaign, finds UTM mistakes, guides conversion setup, plans B2B "
     "campaigns, drafts Sponsored Content copy and does the budget pacing math. "
-    "It cannot read your LinkedIn ad account yet: direct access is planned for "
-    "when LinkedIn approves AdCopilot's API access, and there is no date."
+    "It cannot read your LinkedIn ad account yet. " + LATER
 )
 
 # The approval promise, in every skill.
@@ -287,8 +291,8 @@ class Readme(unittest.TestCase):
         self.assertLessEqual(len(words), 1300)
 
     def test_it_says_what_works_today_and_what_comes_later(self):
-        self.assertIn("**What comes later.** AdCopilot cannot read your LinkedIn ad account yet.", self.flat)
-        self.assertIn("and there is no date.", self.flat)
+        self.assertIn("**What comes later.** AdCopilot cannot read your LinkedIn ad account yet. "
+                      + LATER, self.flat)
 
     def test_it_holds_the_sections_the_directory_expects(self):
         for heading in ("# AdCopilot for LinkedIn Ads", "## Install", "## Already use another AdCopilot plugin?",
@@ -316,6 +320,11 @@ class Readme(unittest.TestCase):
         for destination in ("mcp.adcopilot.cloud", "https://adcopilot.cloud/privacy",
                             "https://adcopilot.cloud/terms", "https://app.adcopilot.cloud"):
             self.assertIn(destination, self.text)
+
+    def test_the_marketplace_entry_says_what_comes_later_in_the_same_words(self):
+        market = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+        self.assertTrue(market["plugins"][0]["description"].endswith(LATER),
+                        market["plugins"][0]["description"])
 
     def test_the_version_paragraph_matches_the_manifest(self):
         match = re.search(r"\*\*(\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2}), written against AdCopilot "

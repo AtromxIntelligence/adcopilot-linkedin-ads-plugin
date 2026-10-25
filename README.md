@@ -23,8 +23,7 @@ it:
   AdCopilot reads no LinkedIn data for it.
 
 **What comes later.** AdCopilot cannot read your LinkedIn ad account yet. Direct
-access is planned for when LinkedIn approves AdCopilot's API access, and there is
-no date.
+access to your LinkedIn ad account is being built; there is no date.
 
 Made by Atromx Intelligence (https://adcopilot.cloud). Not affiliated with or
 endorsed by LinkedIn or Google. LinkedIn is a trademark of LinkedIn Corporation,
@@ -118,6 +117,12 @@ or write to support@adcopilot.cloud.
 
 ## Version
 
+**0.1.1 (2026-10-25, written against AdCopilot v2.44.0, live since 2026-10-22)**
+Text only. Every place that says what comes later now says: direct access to your
+LinkedIn ad account is being built; there is no date. The skills, the commands,
+the tools they name and the connector are as in 0.1.0. Reading a LinkedIn ad
+account is not part of this version.
+
 **0.1.0 (2026-10-23, written against AdCopilot v2.44.0, live since 2026-10-22)**
 First release. Four skills and three commands: the LinkedIn Insight Tag check and
 staging in Google Tag Manager, LinkedIn traffic and key events in Google Analytics
@@ -137,5 +142,7 @@ that every skill and command has a name and a description, that no
 download-and-execute pattern is present and that the manifest version is not
 behind the latest tag, and runs the stdlib unit tests in the tests folder. They
 check the manifest fields, the file sizes, that every tool a skill names is one
-the connector serves, and that nothing reads a credential. The second job,
-gitleaks, scans every commit for secrets. Neither job needs a secret of its own.
+the connector serves, that nothing reads a credential, that no file claims
+approval or partnership from LinkedIn, and that none carries an id kept out of
+this repository. The second job, gitleaks, scans every commit for secrets.
+Neither job needs a secret of its own.
