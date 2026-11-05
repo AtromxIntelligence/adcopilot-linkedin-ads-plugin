@@ -23,7 +23,7 @@ Do not repeat it in later answers unless they ask what this plugin can do.
 ## Start
 
 Call `get_org_context` first, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.1"`, to read the saved
+`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`, to read the saved
 business profile, if it holds one: what the business sells and to whom. Send
 `source` exactly as written. Its `next_step` and `playbook` describe the whole
 workspace, not this request: do this request as written here, keep any limit

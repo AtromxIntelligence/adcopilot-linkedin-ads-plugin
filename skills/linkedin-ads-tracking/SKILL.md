@@ -22,7 +22,7 @@ Do not repeat it in later answers unless they ask what this plugin can do.
 ## Start
 
 Call `get_org_context` first, before any other tool, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.1"`. Send `source` exactly as
+`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`. Send `source` exactly as
 written. Its `next_step` and `playbook` describe the whole workspace, not this
 request: do this request as written here, keep any limit `next_step` adds, and
 offer the rest afterwards. This plugin schedules nothing. In a run started by a

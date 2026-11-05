@@ -30,7 +30,7 @@ endorsed by LinkedIn or Google. LinkedIn is a trademark of LinkedIn Corporation,
 and Google Analytics and Google Tag Manager are trademarks of Google LLC. This
 plugin is not related to other products named AdCopilot.
 
-The plugin is free (MIT). The AdCopilot connector is a hosted service: Free plan available; paid plans on https://adcopilot.cloud/pricing
+The plugin is MIT licensed. The AdCopilot connector it brings is a hosted service, so you need an AdCopilot account to use it.
 
 ## Install
 
@@ -106,9 +106,17 @@ Every skill says what it cannot see, and writes LinkedIn's screens and limits as
 The plugin is instructions only: it runs no code and sends nothing anywhere
 itself. The AdCopilot connector at mcp.adcopilot.cloud reads and, on your yes,
 writes your Google products through Google's APIs with your Google sign-in. The
-skills name a few LinkedIn and Google help pages for you to read; the plugin
-fetches none of them. Privacy policy: https://adcopilot.cloud/privacy. Terms:
+skills name a few help pages on www.linkedin.com, support.google.com and
+developers.google.com for you to read; the plugin fetches none of them. Privacy policy: https://adcopilot.cloud/privacy. Terms:
 https://adcopilot.cloud/terms. Documentation: https://adcopilot.cloud/docs/.
+
+## Example prompts
+
+After you sign in, ask in your own words. For example:
+
+- "Check whether my LinkedIn Insight Tag is installed in Google Tag Manager, and what fires it."
+- "How much LinkedIn traffic reached my site last month, and how many key events did it bring in Google Analytics?"
+- "Plan a B2B lead generation campaign on LinkedIn for my business and draft the Sponsored Content copy."
 
 ## Support
 
@@ -116,6 +124,9 @@ Open an issue at https://github.com/AtromxIntelligence/adcopilot-linkedin-ads-pl
 or write to support@adcopilot.cloud.
 
 ## Version
+
+**0.1.2 (2026-11-05)**
+Changes nothing you use. The plugin folder now holds only the files Claude loads.
 
 **0.1.1 (2026-10-25, written against AdCopilot v2.44.0, live since 2026-10-22)**
 Text only. Every place that says what comes later now says: direct access to your
@@ -132,17 +143,3 @@ budget pacing math. Reading a LinkedIn ad account is not part of this version.
 ## Licence
 
 MIT, copyright 2026 Atromx Intelligence Private Limited. See the LICENSE file.
-
-## What CI runs
-
-On every push to main and every pull request, GitHub Actions runs two jobs. The
-first, structural, installs a pinned Claude Code, runs the plugin validator in its
-strict mode on the plugin and on its manifest, checks that the manifests parse,
-that every skill and command has a name and a description, that no
-download-and-execute pattern is present and that the manifest version is not
-behind the latest tag, and runs the stdlib unit tests in the tests folder. They
-check the manifest fields, the file sizes, that every tool a skill names is one
-the connector serves, that nothing reads a credential, that no file claims
-approval or partnership from LinkedIn, and that none carries an id kept out of
-this repository. The second job, gitleaks, scans every commit for secrets.
-Neither job needs a secret of its own.
