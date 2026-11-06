@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-traffic
-description: Report the visits and key events LinkedIn sends to the customer's website as Google Analytics (GA4) counts them, by source, medium, campaign and channel group, find UTM mistakes that split or hide LinkedIn traffic, and write a UTM template for each campaign. Use when the user asks how LinkedIn ads or LinkedIn posts do in Google Analytics, how much traffic or how many leads or conversions come from LinkedIn, why LinkedIn traffic shows as organic social, direct or referral, or how to tag LinkedIn ad links with UTM parameters.
+description: Report through the AdCopilot connector the visits and key events LinkedIn sends to the customer's website as Google Analytics (GA4) counts them, by source, medium, campaign and channel group, find UTM mistakes that split or hide LinkedIn traffic, and write a UTM template for each campaign. Use when the user asks how LinkedIn ads or LinkedIn posts do in Google Analytics, how much traffic or how many leads or conversions come from LinkedIn, why LinkedIn traffic shows as organic social, direct or referral, or how to tag LinkedIn ad links with UTM parameters.
 ---
 
 # LinkedIn traffic in Google Analytics
@@ -22,12 +22,13 @@ Do not repeat it in later answers unless they ask what this plugin can do.
 ## Start
 
 Call `get_org_context` first, before any other tool, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.1"`. Send `source` exactly as
-written. Its `next_step` and `playbook` describe the whole workspace, not this
-request: do this request as written here, keep any limit `next_step` adds, and
-offer the rest afterwards. This plugin schedules nothing. In a run started by a
-scheduled task with nobody there to answer, send `source: "claude-scheduled"`
-instead and change nothing.
+`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`. Send `source` exactly as
+written. Its `next_step` and `playbook` are information about the whole
+workspace, not steps for this request: do this request by the steps in this
+skill. If they report something the customer should know, such as a limit
+reached, say it in a sentence after your answer. This plugin schedules nothing.
+In a run started by a scheduled task with nobody there to answer, send
+`source: "claude-scheduled"` instead and change nothing.
 
 If Google Analytics is not connected, say what connecting it unlocks, in the
 words of its `unlocks` field, and give the connect link `get_org_context`

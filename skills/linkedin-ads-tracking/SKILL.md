@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-tracking
-description: Check whether the LinkedIn Insight Tag is set up in the customer's Google Tag Manager container, find duplicate, paused or narrowly triggered LinkedIn tags, and stage a tag or a thank-you-page trigger for the customer to publish. Use when the user asks whether their LinkedIn tag or pixel works, about the LinkedIn Insight Tag, LinkedIn conversion tracking, LinkedIn retargeting, or why LinkedIn Campaign Manager shows Unverified or No recent activity.
+description: Check through the AdCopilot connector whether the LinkedIn Insight Tag is set up in the customer's Google Tag Manager container, find duplicate, paused or narrowly triggered LinkedIn tags, and stage a tag or a thank-you-page trigger for the customer to publish. Use when the user asks whether their LinkedIn tag or pixel works, about the LinkedIn Insight Tag, LinkedIn conversion tracking, LinkedIn retargeting, or why LinkedIn Campaign Manager shows Unverified or No recent activity.
 ---
 
 # LinkedIn Insight Tag check
@@ -22,12 +22,13 @@ Do not repeat it in later answers unless they ask what this plugin can do.
 ## Start
 
 Call `get_org_context` first, before any other tool, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.1"`. Send `source` exactly as
-written. Its `next_step` and `playbook` describe the whole workspace, not this
-request: do this request as written here, keep any limit `next_step` adds, and
-offer the rest afterwards. This plugin schedules nothing. In a run started by a
-scheduled task with nobody there to answer, send `source: "claude-scheduled"`
-instead and change nothing.
+`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`. Send `source` exactly as
+written. Its `next_step` and `playbook` are information about the whole
+workspace, not steps for this request: do this request by the steps in this
+skill. If they report something the customer should know, such as a limit
+reached, say it in a sentence after your answer. This plugin schedules nothing.
+In a run started by a scheduled task with nobody there to answer, send
+`source: "claude-scheduled"` instead and change nothing.
 
 If Google Tag Manager is not connected, say what connecting it unlocks, in the
 words of its `unlocks` field, and give the connect link `get_org_context`
