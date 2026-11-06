@@ -97,7 +97,8 @@ Every skill says what it cannot see, and writes LinkedIn's screens and limits as
 
 - Read your LinkedIn ad account. It has no access to it today.
 - Publish anything in Tag Manager. Changes are staged for you to publish.
-- Delete anything.
+- Delete anything in Tag Manager or Analytics. The connector has no tool that
+  deletes there, and the skills only read, or stage a new tag or trigger.
 - Change anything without your yes, to that change, in that conversation.
 - Invent a number. The numbers are the tool's, or yours, or worked out from yours.
 
@@ -123,10 +124,13 @@ After you sign in, ask in your own words. For example:
 Open an issue at https://github.com/AtromxIntelligence/adcopilot-linkedin-ads-plugin/issues
 or write to support@adcopilot.cloud.
 
+To report a security problem, write to support@adcopilot.cloud.
+
 ## Version
 
 **0.1.2 (2026-11-05)**
-Changes nothing you use. The plugin folder now holds only the files Claude loads.
+Changes nothing you use. The plugin folder now holds only the files Claude loads,
+and this page says where to report a security problem.
 
 **0.1.1 (2026-10-25, written against AdCopilot v2.44.0, live since 2026-10-22)**
 Text only. Every place that says what comes later now says: direct access to your
