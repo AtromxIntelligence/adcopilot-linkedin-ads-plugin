@@ -1,5 +1,4 @@
 ---
-name: setup
 description: Check the AdCopilot connector is connected and signed in, and say which Google products it can reach for LinkedIn Ads work.
 ---
 
@@ -30,10 +29,10 @@ what `get_org_context` says.
 If the connector does not answer, or asks the customer to sign in, work out where
 they are before you say a step:
 
-- **Claude Code.** If you can run `claude mcp list`, this is Claude Code. The
-  customer opens `/mcp`, chooses the AdCopilot connector and signs in. `/mcp`
-  lists it once, under whichever AdCopilot plugin loaded first, however many
-  AdCopilot plugins they have.
+- **Claude Code.** If your own instructions say you are Claude Code, or you have
+  a shell tool, this is Claude Code. The customer opens `/mcp`, chooses the
+  AdCopilot connector and signs in. `/mcp` lists it once, under whichever
+  AdCopilot plugin loaded first, however many AdCopilot plugins they have.
 - **Claude on the web, the desktop app and Cowork.** There is no `/mcp` there.
   They open this plugin in the plugin list, then its Connectors tab, and Connect
   `adcopilot`. Never offer "Add custom connector" or the connector's address to

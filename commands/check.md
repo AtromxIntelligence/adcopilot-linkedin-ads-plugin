@@ -1,5 +1,4 @@
 ---
-name: check
 description: Check whether the LinkedIn Insight Tag is set up in Google Tag Manager, and stage a tag for the customer to publish if it is missing.
 ---
 

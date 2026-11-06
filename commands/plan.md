@@ -1,5 +1,4 @@
 ---
-name: plan
 description: Plan a LinkedIn B2B ad campaign and draft Sponsored Content copy, from what the customer tells Claude.
 ---
 
