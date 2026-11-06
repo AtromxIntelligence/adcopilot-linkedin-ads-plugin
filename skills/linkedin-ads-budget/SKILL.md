@@ -1,6 +1,6 @@
 ---
 name: linkedin-ads-budget
-description: Work out LinkedIn ad budget pacing and cost-per-lead arithmetic from figures the customer gives, with Claude's own math, covering projected spend, the daily amount that lands on budget, over or under pace, and leads needed or affordable at a target cost. AdCopilot reads no LinkedIn data for this. Use when the user asks whether a LinkedIn campaign is on pace, how much to spend per day, how many leads a LinkedIn budget buys, or what a LinkedIn lead costs.
+description: Work out LinkedIn ad budget pacing and cost-per-lead arithmetic from figures the customer gives, with Claude's own math, covering projected spend, the daily amount that lands on budget, over or under pace, and leads needed or affordable at a target cost. AdCopilot reads no LinkedIn data for this. Use when the user asks whether a LinkedIn campaign is on pace, how much to spend per day on LinkedIn, how many leads a LinkedIn budget buys, or what a LinkedIn lead costs.
 ---
 
 # LinkedIn budget pacing
