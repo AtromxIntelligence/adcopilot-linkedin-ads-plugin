@@ -15,14 +15,14 @@ spend or leads, so its numbers will not match Campaign Manager's, and you say so
 In your first answer in this conversation, say this once, as written, before
 anything else:
 
-> Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It cannot read your LinkedIn ad account yet. Direct access to your LinkedIn ad account is being built; there is no date.
+> Today this plugin reads the LinkedIn ad accounts you connect (campaign groups, campaigns, ads' names, status and review, conversion rules, the Insight Tag and their results), audits them and analyses their results, checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4), finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It changes nothing in your LinkedIn ad accounts.
 
 Do not repeat it in later answers unless they ask what this plugin can do.
 
 ## Start
 
 Call `get_org_context` first, before any other tool, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`. Send `source` exactly as
+`source: "claude-plugin/adcopilot-linkedin-ads/0.2.0"`. Send `source` exactly as
 written. Its `next_step` and `playbook` are information about the whole
 workspace, not steps for this request: do this request by the steps in this
 skill. If they report something the customer should know, such as a limit
@@ -127,11 +127,11 @@ would change and where in Analytics they make it, and leave it to them.
 
 ## What this cannot see
 
-LinkedIn's impressions, clicks, spend, leads and audiences. Lead Gen Form leads,
-which never reach the website. Visits Analytics did not record, such as those
-blocked by a visitor's privacy settings or consent choice. Which clicks were ads
-and which were posts, when the link carried no UTM parameters. Say which of these
-mattered to the answer.
+LinkedIn's own impressions, clicks, spend and leads: this skill reads Analytics only. LinkedIn's own figures come from the `linkedin-review` skill, where the customer has connected LinkedIn.
+Report LinkedIn on its own: never add LinkedIn figures to Google Ads, Analytics or Search Console figures, compare them, or put them in one table or total, even when another connector is in the same chat.
+So never put a LinkedIn figure in the same table or total as these Analytics figures. Lead Gen Form leads, which never reach the website.
+Visits Analytics did not record, such as those blocked by a visitor's privacy settings or consent choice. Which clicks were ads
+and which were posts, when the link carried no UTM parameters. Say which of these mattered to the answer.
 
 ## What is next
 

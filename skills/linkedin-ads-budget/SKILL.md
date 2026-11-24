@@ -16,7 +16,7 @@ figure of record.
 In your first answer in this conversation, say this once, as written, before
 anything else:
 
-> Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It cannot read your LinkedIn ad account yet. Direct access to your LinkedIn ad account is being built; there is no date.
+> Today this plugin reads the LinkedIn ad accounts you connect (campaign groups, campaigns, ads' names, status and review, conversion rules, the Insight Tag and their results), audits them and analyses their results, checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4), finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It changes nothing in your LinkedIn ad accounts.
 
 Do not repeat it in later answers unless they ask what this plugin can do.
 
@@ -74,7 +74,9 @@ to change and that they make it in Campaign Manager themselves.
 
 Their LinkedIn ad account: the real spend, the real leads and the delivery since
 the figures were copied. A figure they typed in is theirs, and you label it that
-way. Say which of these mattered to the answer.
+way. Where the customer has connected LinkedIn, the `linkedin-audit` skill reads
+the account's own pacing through the LinkedIn connector instead. Say which of
+these mattered to the answer.
 
 ## What is next
 
