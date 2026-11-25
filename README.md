@@ -14,7 +14,7 @@ endorsed by LinkedIn or Google. LinkedIn is a trademark of LinkedIn Corporation,
 and Google Analytics and Google Tag Manager are trademarks of Google LLC. This
 plugin is not related to other products named AdCopilot.
 
-The plugin is MIT licensed. The AdCopilot connector it brings is a hosted service, so you need an AdCopilot account to use it.
+The plugin is MIT licensed. The two connectors it brings, `adcopilot` and `li`, are hosted services, so you need an AdCopilot account to use them.
 
 ## What it does today
 
@@ -107,7 +107,7 @@ Disconnecting LinkedIn on your AdCopilot dashboard deletes your LinkedIn sign-in
 LinkedIn results go to the AI assistant you chose, which is made by a separate company: its terms and your settings there decide how long it keeps them and whether it trains on them.
 AdCopilot is AI-powered: what your AI assistant says from LinkedIn results is AI-generated and may be wrong, so check it before you act on it. AdCopilot does not train AI models on LinkedIn data. Report a harmful or wrong answer to support@adcopilot.cloud.
 
-The skills end with lists of pages you can open to check an answer: LinkedIn's help pages at www.linkedin.com, and Google's at support.google.com and developers.google.com.
+Three of the skills end with lists of pages you can open to check an answer: LinkedIn's help pages at www.linkedin.com, and Google's at support.google.com and developers.google.com.
 They are links for you to read.
 The plugin does not fetch them and sends nothing to them.
 

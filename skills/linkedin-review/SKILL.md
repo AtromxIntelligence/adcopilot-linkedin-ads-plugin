@@ -34,7 +34,7 @@ steps for that value apply: take them and stop there.
    the one they choose as `account_id` to every tool below.
 2. `linkedin_account_overview` gives the account's totals for the dates.
    `linkedin_campaign_groups` and `linkedin_campaigns` give each item's own
-   figures. When an answer has `next_page_token`, pass it back as `page_token` for
+   figures (with include_metrics true). When an answer has `next_page_token`, pass it back as `page_token` for
    the next page, and never call a partial list the whole.
 3. `linkedin_creatives` lists the ads with their names, status and LinkedIn's
    review result. It reads no ad text or images.
