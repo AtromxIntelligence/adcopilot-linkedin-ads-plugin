@@ -1,6 +1,6 @@
 {
   "name": "adcopilot-linkedin-ads-plugin",
-  "description": "AdCopilot for LinkedIn Ads for Claude Code: LinkedIn Insight Tag checks in Google Tag Manager, LinkedIn traffic and key events in Google Analytics (GA4), UTM hygiene, B2B campaign plans, Sponsored Content drafts and budget pacing math.",
+  "description": "AdCopilot for LinkedIn Ads for Claude Code: reads, audits and analyses the LinkedIn ad accounts you connect, read only, plus LinkedIn Insight Tag checks in Google Tag Manager, LinkedIn traffic and key events in Google Analytics (GA4), UTM hygiene, B2B campaign plans, Sponsored Content drafts and budget pacing math.",
   "owner": {
     "name": "Atromx Intelligence",
     "url": "https://adcopilot.cloud"
@@ -9,7 +9,7 @@
     {
       "name": "adcopilot-linkedin-ads",
       "source": "./",
-      "description": "LinkedIn Ads help through AdCopilot: Insight Tag checks in Tag Manager, LinkedIn traffic in Google Analytics, UTM hygiene, B2B campaign plans, Sponsored Content drafts and budget math. Direct access to your LinkedIn ad account is being built; there is no date.",
+      "description": "LinkedIn Ads help through AdCopilot: reads, audits and analyses the LinkedIn ad accounts you connect and changes nothing in them, checks the Insight Tag in Tag Manager, reports LinkedIn traffic in Google Analytics, plans B2B campaigns, drafts Sponsored Content and does budget math. Every Tag Manager change is staged only on your yes and never published for you.",
       "category": "Marketing"
     }
   ]

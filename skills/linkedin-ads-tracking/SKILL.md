@@ -15,14 +15,14 @@ the AdCopilot connector, from the container's tags and triggers.
 In your first answer in this conversation, say this once, as written, before
 anything else:
 
-> Today it checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4) by source, medium and campaign, finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It cannot read your LinkedIn ad account yet. Direct access to your LinkedIn ad account is being built; there is no date.
+> Today this plugin reads the LinkedIn ad accounts you connect (campaign groups, campaigns, ads' names, status and review, conversion rules, the Insight Tag and their results), audits them and analyses their results, checks your LinkedIn Insight Tag in Google Tag Manager, reports LinkedIn traffic and key events in Google Analytics (GA4), finds UTM mistakes, guides conversion setup, plans B2B campaigns, drafts Sponsored Content copy and does the budget pacing math. It changes nothing in your LinkedIn ad accounts.
 
 Do not repeat it in later answers unless they ask what this plugin can do.
 
 ## Start
 
 Call `get_org_context` first, before any other tool, with
-`source: "claude-plugin/adcopilot-linkedin-ads/0.1.2"`. Send `source` exactly as
+`source: "claude-plugin/adcopilot-linkedin-ads/0.2.0"`. Send `source` exactly as
 written. Its `next_step` and `playbook` are information about the whole
 workspace, not steps for this request: do this request by the steps in this
 skill. If they report something the customer should know, such as a limit
@@ -189,17 +189,17 @@ version. When a write fails, say what failed and that nothing changed.
 
 ## What this cannot see
 
-The Insight Tag's status in Campaign Manager. Whether the website loads the
-Tag Manager container at all. Which container version is live. The visitor's
-consent choices. Whether the partner ID belongs to the right ad account. Your
-LinkedIn ad account, its audiences and its conversions. Say which of these
-mattered to the answer.
+This skill reads Tag Manager only. It cannot see whether the website loads the
+Tag Manager container at all, which container version is live, or the visitor's
+consent choices. The LinkedIn side, whether LinkedIn has seen the Insight Tag and from which domains, and the conversion rules,
+is read through the LinkedIn connector by the `linkedin-review` skill, where the customer has connected LinkedIn.
+Say which of these mattered to the answer.
 
 ## What is next
 
 Answer what they asked first, whole. Then offer at most one next step, in a
-sentence, and only when it follows from what you found: the Campaign Manager
-status check, or how LinkedIn traffic looks in Google Analytics.
+sentence, and only when it follows from what you found: LinkedIn's own view of the tag through the `linkedin-review` skill,
+or how LinkedIn traffic looks in Google Analytics.
 
 ## Sources
 
